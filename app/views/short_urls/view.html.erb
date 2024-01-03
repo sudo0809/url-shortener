@@ -1,0 +1,20 @@
+<div>
+  <h1 class="heading">View Urls</h1>
+  <div class="main_content">
+
+    <div class="short-url">
+      <div>
+        Original URL:
+        <div class="box" id="original-url-value"> <%= @short_url[:redirect_url] %> </div>
+      </div>
+      <div>
+        Short URL:
+        <div class="box" id="short-url-value"> <%= @short_url[:short_url] %> </div>
+      </div>
+
+      <div>
+        <%= button_to 'Generate Another', root_path, class: "button imp-btn", method: :get %>
+      </div>
+    </div>
+  </div>
+</div>

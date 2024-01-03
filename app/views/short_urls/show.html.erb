@@ -1,0 +1,13 @@
+<div>
+  <h1 class="heading">My Urls</h1>
+  <% @result.each_with_index do |r, index| %>
+    <div>
+      <div>index -> <%= index %></div>
+      <div>original url -> <%= r[:redirect_url] %></div>
+      <div>short url -> <%= r[:short_url] %></div>
+      <div>expiry at -> <%= r[:expire_at] %></div>
+      <div>link status -> <%= r[:status] %></div>
+    </div>
+
+<% end %>
+</div>

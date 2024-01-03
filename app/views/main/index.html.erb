@@ -1,0 +1,17 @@
+<div class="homepage">
+  <h1 class="heading">Enter web URL to get short-url</h1>
+  <div class="main_content">
+    <div class="form">
+      <%= form_with class: 'short_url_form', url: '/create-short-url', method: :post, data: { turbo: false }, remote: true do |form| %>
+        <div class="field">
+          <%= form.label :web_url, class: 'label' %>
+          <%= form.text_field :web_url, class: 'input-box' %>
+        </div>
+
+        <div>
+          <%= form.submit 'Get Short URL', class: 'button imp-btn', id: 'get-short-url' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

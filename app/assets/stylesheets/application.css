@@ -1,0 +1,96 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.homepage {
+    padding: 2rem 15rem;
+}
+
+.heading{
+    text-align: center;
+}
+
+.main_content {
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.label{
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.input-box {
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+}
+
+.short-url {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.box {
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: white;
+    color: green;
+    font-weight: bolder;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+}
+
+.box::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+.button {
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 6px;
+}
+
+.imp-btn {
+    background-color: cornflowerblue;
+    color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
