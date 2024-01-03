@@ -15,17 +15,22 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <div>
+  <nav>
     <% if user_signed_in? %>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'My Urls', my_urls_path %>
-      <%= link_to 'Profile', edit_user_registration_path %>
-      <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+      <ul>
+        <li><%= link_to 'Home', root_path, class: 'nav_link' %></li>
+        <li><%= link_to 'My Urls', my_urls_path, class: 'nav_link' %></li>
+        <li><%= link_to 'Profile', edit_user_registration_path, class: 'nav_link' %></li>
+        <li><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav_link' %></li>
+      </ul>
     <% else %>
-      <%= link_to 'Login', new_user_session_path %>
-      <%= link_to 'Sign up', new_user_registration_path %>
+      <ul>
+        <li><%= link_to 'Home', root_path, class: 'nav_link' %></li>
+        <li><%= link_to 'Login', new_user_session_path, class: 'nav_link' %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path, class: 'nav_link' %></li>
+      </ul>
     <% end %>
-  </div>
+  </nav>
 
 
   <%= yield %>

@@ -1,13 +1,35 @@
 <div>
   <h1 class="heading">My Urls</h1>
-  <% @result.each_with_index do |r, index| %>
-    <div>
-      <div>index -> <%= index %></div>
-      <div>original url -> <%= r[:redirect_url] %></div>
-      <div>short url -> <%= r[:short_url] %></div>
-      <div>expiry at -> <%= r[:expire_at] %></div>
-      <div>link status -> <%= r[:status] %></div>
-    </div>
+  <div class="items">
+      <% @result.each_with_index do |r, index| %>
+        <div class="item" id=<%= index %>>
+          <div>
+            <h3>Original url</h3>
+            <div class="box"><%= r[:redirect_url] %></div>
+          </div>
+          <div>
+            <h3>Short url</h3>
+            <div class="box"><%= r[:short_url] %></div>
+          </div>
+          <% if r[:expire_at] - Time.zone.now > 0 %>
+            <div>
+              <h3>Expiry Date time</h3>
+              <%= r[:expire_at] %>
+            </div>
+            <div>
+              <h3>Time Remaining</h3>
+            <%= r[:expire_at] - Time.zone.now  %>
+            </div>
 
-<% end %>
+          <% else %>
+            <div>
+              <h3>Expired at</h3>
+              <%= r[:expire_at] %>
+            </div>
+          <% end %>
+<!--          <div>link status -> <%#= r[:status] %></div>-->
+        </div>
+
+    <% end %>
+  </div>
 </div>
