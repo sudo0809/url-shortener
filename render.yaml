@@ -1,5 +1,5 @@
 databases:
-  - name: s-url
+  - name: postgres
     ipAllowList: []
     databaseName: s_url
     user: s_url
