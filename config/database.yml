@@ -27,4 +27,8 @@ test:
 production:
   <<: *default
 #  database: db/production.sqlite3
-  database: s_url_production
+  database:
+    url: <%= ENV['DATABASE_URL'] %>
+    database: s_url_production
+    username: s_url
+    password: <%= ENV['MY_APP_RENDER_DATABASE_PASSWORD'] %>
