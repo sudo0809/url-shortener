@@ -171,3 +171,7 @@ li{
     padding: 10px 50px;
     border-radius: 10px;
 }
+
+.text-ctr {
+    text-align: center;
+}
