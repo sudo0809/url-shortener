@@ -74,6 +74,7 @@
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.7.0, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.16.0, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pg (v1.5.4, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="psych (v5.1.2, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v5.0.4, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v5.6.7, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
@@ -94,7 +95,6 @@
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.16.0, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.2.1, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.4.2, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.7.0, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.3.0, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.0, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.0, RVM: ruby-3.0.0 [global]) [gem]" level="application" />
@@ -379,6 +379,11 @@
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl description="Prints out your Rack middleware stack" fullCommand="middleware" id="middleware" />
+          <RakeTaskImpl id="remove_data">
+            <subtasks>
+              <RakeTaskImpl description="for user" fullCommand="remove_data:remove_short_urls" id="remove_short_urls" />
+            </subtasks>
+          </RakeTaskImpl>
           <RakeTaskImpl description="Restart app by touching tmp/restart.txt" fullCommand="restart" id="restart" />
           <RakeTaskImpl description="Generate a cryptographically secure secret key (this is typically used to generate a secret for cookie sessions)" fullCommand="secret" id="secret" />
           <RakeTaskImpl description="Report code statistics (KLOCs, etc) from the application or engine" fullCommand="stats" id="stats" />
