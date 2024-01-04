@@ -3,6 +3,7 @@ databases:
     ipAllowList: []
     databaseName: s_url
     user: s_url
+    plan: free
 
 services:
   - type: web
