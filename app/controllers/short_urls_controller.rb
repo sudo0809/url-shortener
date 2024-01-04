@@ -6,7 +6,7 @@ class ShortUrlsController < ApplicationController
     new_expiry_time = Time.zone.now + 15.minutes
     short_web_url_hex = SecureRandom.hex(8)
 
-    root_url = 'http://127.0.0.1:3000'
+    root_url = request.base_url
     short_web_url = "#{root_url}/#{short_web_url_hex}"
 
     user = {}
