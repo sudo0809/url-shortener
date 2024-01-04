@@ -1,0 +1,19 @@
+databases:
+  - name: sqlite3
+    ipAllowList: []
+    databaseName: url-shortener
+    user: url-shortener
+
+services:
+  - type: web
+    name: my_app_render
+    env: ruby
+    buildCommand: "./render-build.sh"
+    startCommand: "bundle exec rails s"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: url-shortener
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
