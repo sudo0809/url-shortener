@@ -12,8 +12,9 @@
         <div class="box" id="short-url-value"> <%= @short_url[:short_url] %> </div>
       </div>
 
-      <div>
+      <div class="inline-field jc-sb">
         <%= button_to 'Generate Another', root_path, class: "button imp-btn", method: :get %>
+        <%= button_to 'Go to My Urls', my_urls_path, class: "button imp-btn", method: :get %>
       </div>
     </div>
   </div>

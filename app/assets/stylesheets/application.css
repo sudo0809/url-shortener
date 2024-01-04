@@ -29,6 +29,7 @@ ul{
     display: flex;
     list-style: none;
     justify-content: end;
+    align-items: center;
 }
 li{
     padding: 0 10px;
@@ -66,6 +67,9 @@ li{
 .inline-field{
     display: flex;
     flex-direction: row;
+}
+.jc-sb{
+    justify-content: space-between;
 }
 .label{
     font-family: sans-serif;
@@ -118,6 +122,10 @@ li{
     background-color: cornflowerblue;
     color: black;
 }
+.btn-focus:hover {
+    background-color: cornflowerblue;
+    color: black;
+}
 
 .container {
     display: flex;
@@ -139,4 +147,27 @@ li{
     margin: 1rem 0;
     border-radius: 10px;
     flex-grow: 1;
+}
+
+/* popups */
+.popup {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    /*padding: 0 70px;*/
+    text-wrap: wrap;
+    top: -100px;
+    transition: top 0.5s ease-out;
+}
+.popup.show {
+    top: 40px;
+}
+
+.notice, .alert{
+    background-color: #79b183;
+    display: flex;
+    padding: 10px 50px;
+    border-radius: 10px;
 }

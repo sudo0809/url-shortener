@@ -12,16 +12,21 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class="popup">
+    <p class="notice" id="notice"><%= notice %></p>
+  </div>
+  <div class="popup">
+    <p class="alert" id="alert"><%= alert %></p>
+  </div>
 
   <nav>
     <% if user_signed_in? %>
+      <h2>Welcome <%= current_user[:name].to_s.capitalize %>!!!</h2>
       <ul>
         <li><%= link_to 'Home', root_path, class: 'nav_link' %></li>
         <li><%= link_to 'My Urls', my_urls_path, class: 'nav_link' %></li>
         <li><%= link_to 'Profile', edit_user_registration_path, class: 'nav_link' %></li>
-        <li><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav_link' %></li>
+        <li><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav_link button btn-focus' %></li>
       </ul>
     <% else %>
       <ul>
@@ -35,4 +40,32 @@
 
   <%= yield %>
   </body>
+
+<script>
+    function showPopup() {
+        setTimeout(() => {
+            var popups = document.getElementsByClassName("popup");
+            for (let i = 0; i < popups.length; i++) {
+                if (popups[i].children[0].outerText.length !== 0){
+                  popups[i].classList.add("show");
+                }
+            }
+        }, 100)
+
+        setTimeout(() => {
+            var popups = document.getElementsByClassName("popup");
+            for (let i = 0; i < popups.length; i++) {
+                console.log()
+                popups[i].classList.remove("show");
+            }
+        }, 3000)
+    }
+
+    var notice_text = document.getElementById("notice")
+    var alert_text = document.getElementById("alert")
+
+    if (notice_text.textContent.length !== 0 || alert_text.textContent.length !== 0){
+        showPopup()
+    }
+</script>
 </html>
