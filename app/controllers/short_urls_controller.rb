@@ -64,3 +64,5 @@ class ShortUrlsController < ApplicationController
     # This action is empty because it only renders the view
   end
 end
+
+
